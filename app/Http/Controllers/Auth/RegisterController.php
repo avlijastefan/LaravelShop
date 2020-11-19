@@ -93,15 +93,18 @@ class RegisterController extends Controller
 
 
         // ako je pristao da dobija obavestenja, prijavljujem na listu
-        if ($data['newsletter_subscriber'] == 'on'):
-
-            $addSubscriber = NewsletterSubscriber::create([
-                'user_id' => $NEWuser->id,
-                'email' => $data['email'],
-                'status' => 1,
-            ]);
+        if(isset($data['newsletter_subscriber']) && $data['newsletter_subscriber'] == 1):
+            $status = 1;
+        else:
+            $status = 0;
 
         endif;
+
+        $addSubscriber = NewsletterSubscriber::create([
+            'user_id' => $NEWuser->id,
+            'email' => $data['email'],
+            'status' => $status,
+        ]);
 
         return $NEWuser;
 

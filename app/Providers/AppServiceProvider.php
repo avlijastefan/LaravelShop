@@ -62,7 +62,7 @@ class AppServiceProvider extends ServiceProvider
                 $ulogovan = Auth::user();
                 $userDATA['msg'] = trans('shop.title_hello').' '.$ulogovan->name;
                 $userDATA['customer']['name'] = $ulogovan->name;
-                $userDATA['customer']['last_name'] = $ulogovan->name;
+                $userDATA['customer']['last_name'] = $ulogovan->last_name;
                 $userDATA['customer']['barcode'] = $ulogovan->loy_barcode;
 
 

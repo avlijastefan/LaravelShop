@@ -21,7 +21,7 @@
 
 	<table width="100%">
 		<tr>
-			<td width="35%" valign="top"><img src="storage/{{ setting('site.logo') }}"></td>
+			<td width="35%" valign="top"><img src="{{ setting('site.site_url') }}/storage/{{ str_replace('\\', '/', setting('site.logo')) }}">{{ setting('site.site_url') }}/storage/{{ str_replace('\\', '/', setting('site.logo')) }}</td>
 			<td width="65%" valign="top">
 				<p><strong>{{ setting('company.company_name') }}</strong>, {{ setting('company.company_address') }}, {{ setting('company.company_postal_code') }} {{ setting('company.company_city') }}, {{ setting('company.company_country') }}</p>
 				<p>@lang('shop.print_label_phone'): {{ setting('company.company_phone') }}</p>
